@@ -1,0 +1,23 @@
+[33mcommit 1ef9bbb850cbb237de3a97def66cd800c083383b[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: n.ventura <nelsonventur@gmail.com>
+Date:   Thu Sep 19 15:53:30 2024 +0100
+
+    manter os dados no form depois do erro de validação (old)
+
+[33mcommit 636a5413a688cbf756989bb8f3705fcb331e18da[m
+Author: n.ventura <nelsonventur@gmail.com>
+Date:   Thu Sep 19 15:48:39 2024 +0100
+
+    apresentação dos erros para cada campo
+
+[33mcommit dc784fff100fa166f953e2ddf6c1b00bc6b2ce33[m
+Author: n.ventura <nelsonventur@gmail.com>
+Date:   Thu Sep 19 15:37:47 2024 +0100
+
+    validação de dados e rota para loginsubmit
+
+[33mcommit 765b784beb4de4ed73251974c86f984229a8145b[m
+Author: n.ventura <nelsonventur@gmail.com>
+Date:   Wed Sep 18 14:55:11 2024 +0100
+
+    login
