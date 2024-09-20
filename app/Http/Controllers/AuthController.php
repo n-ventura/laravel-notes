@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AuthController extends Controller
@@ -33,7 +34,13 @@ class AuthController extends Controller
         $username = $request->input('text_username');
         $password = $request->input('text_password');
 
-        echo 'ok!';
+        //get all tuhe users from the database
+
+        $users = User::all()->toArray();
+
+        echo '<pre>';
+
+        print_r($users);
     }
 
     public function logout()
