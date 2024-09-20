@@ -29,3 +29,5 @@ return new class extends Migration
         Schema::dropIfExists('notes');
     }
 };
+
+//php artisan migration:rollback
