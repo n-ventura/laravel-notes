@@ -38,6 +38,10 @@ class AuthController extends Controller
 
         $users = User::all()->toArray();
 
+        //Object
+        $userModel = new User();
+        $users = $userModel->all()->toArray();
+
         echo '<pre>';
 
         print_r($users);
