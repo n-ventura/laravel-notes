@@ -79,6 +79,9 @@ class AuthController extends Controller
 
     public function logout()
     {
-        echo 'logout';
+        //remover o user que existe na sessão
+        session()->forget('user');
+
+        return redirect()->to('/login');
     }
 }
