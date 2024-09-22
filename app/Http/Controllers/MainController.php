@@ -145,10 +145,11 @@ class MainController extends Controller
 
         //soft delete
         //apenas actualiza o campo deleted_at
-        $note->deleted_at = date('Y-m-d H:i:s');
+        //$note->deleted_at = date('Y-m-d H:i:s');
+        //$note->save();
 
-        $note->save();
-
+        // model use softDeletes
+        $note->delete();
 
         //redirecionar
 
