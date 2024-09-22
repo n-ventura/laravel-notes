@@ -21,6 +21,7 @@
                             <div class="mb-3">
                                 <label for="text_username" class="form-label">Username</label>
                                 <input type="text" class="form-control bg-dark text-info" name="text_username" value="{{old('text_username')}}">
+                                {{-- mostra erros--}}
                                 @error('text_username')
                                     <div class="text-danger"> {{ $message }}</div>
                                 @enderror

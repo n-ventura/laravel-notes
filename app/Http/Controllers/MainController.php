@@ -62,12 +62,20 @@ class MainController extends Controller
         return redirect()->route('home');
     }
 
+    public function editNoteSubmit()
+    {
+
+    }
+
     public function editNote($id)
     {
         $id = Operations::decryptId($id);
 
-        echo "edit $id";
+        echo "note id $id";
+        //carregar os dados da nota para edição
+        $note = Note::find($id);
 
+        return view('edit_note', ['note' =>$note]);
 
     }
 
