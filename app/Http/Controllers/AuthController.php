@@ -61,7 +61,7 @@ class AuthController extends Controller
             ]
         ]);
 
-
+        echo 'login com sucesso';
 
 
         //get all tuhe users from the database
