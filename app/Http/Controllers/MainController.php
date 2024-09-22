@@ -17,7 +17,10 @@ class MainController extends Controller
         $id = session('user.id');
         // leitura das notas dos utilizadores
 
-        $notes = User::find($id)->notes()->get()->toArray();
+        $notes = User::find($id)
+                        ->notes()
+                        ->whereNull('deleted_at')
+                        ->get()->toArray();
 
 
         return view('home', ['notes' => $notes]);
@@ -123,8 +126,33 @@ class MainController extends Controller
     {
         $id = Operations::decryptId($id);
 
-        echo "delete $id";
+        //leitura da nota
+        $note = Note::find($id);
 
+        return view('delete_note', ['note' => $note]);
+
+    }
+
+    public function deleteNoteConfirm($id)
+    {
+        //validar o id encriptado
+        $id = Operations::decryptId($id);
+        //ler a nota
+        $note = Note::find($id);
+
+        //hard delete
+        //$note->delete(); // remover fisicamente o registo da base de dados
+
+        //soft delete
+        //apenas actualiza o campo deleted_at
+        $note->deleted_at = date('Y-m-d H:i:s');
+
+        $note->save();
+
+
+        //redirecionar
+
+        return redirect()->route('home');
     }
 
 
