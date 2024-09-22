@@ -22,7 +22,10 @@ class MainController extends Controller
         return view('home', ['notes' => $notes]);
     }
     public function newNote(){
-        echo 'Notas ';
+        return view('new_note');
+    }
+    public function newNoteSubmit(Request $request){
+        echo 'submit';
     }
 
     public function editNote($id)
