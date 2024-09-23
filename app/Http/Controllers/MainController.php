@@ -97,6 +97,9 @@ class MainController extends Controller
         $id = Operations::decryptId($request->note_id);
         //leitura da nota
 
+        if($id === null)
+            return redirect()->route('home');
+
         $note = Note::find($id);
 
         //update na nota
@@ -114,7 +117,8 @@ class MainController extends Controller
     {
         $id = Operations::decryptId($id);
 
-        echo "note id $id";
+        if($id === null)
+            return redirect()->route('home');
         //carregar os dados da nota para edição
         $note = Note::find($id);
 
@@ -126,6 +130,8 @@ class MainController extends Controller
     {
         $id = Operations::decryptId($id);
 
+        if($id === null)
+            return redirect()->route('home');
         //leitura da nota
         $note = Note::find($id);
 
@@ -137,6 +143,9 @@ class MainController extends Controller
     {
         //validar o id encriptado
         $id = Operations::decryptId($id);
+
+        if($id === null)
+            return redirect()->route('home');
         //ler a nota
         $note = Note::find($id);
 
